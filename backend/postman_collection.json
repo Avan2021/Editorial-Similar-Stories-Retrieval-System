@@ -1,0 +1,148 @@
+{
+  "info": {
+    "name": "Similar Stories API",
+    "description": "Postman collection for the Similar Stories Retrieval System.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/health",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "health"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Upload Dataset",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": []
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8000/articles/upload",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "articles",
+            "upload"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Retrain Models",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/admin/retrain",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "admin",
+            "retrain"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Articles",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/articles?page=1&size=50",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "articles"
+          ],
+          "query": [
+            {
+              "key": "page",
+              "value": "1"
+            },
+            {
+              "key": "size",
+              "value": "50"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Single Article",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/articles/YOUR_ARTICLE_ID_HERE",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "articles",
+            "YOUR_ARTICLE_ID_HERE"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Similar Articles",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/articles/YOUR_ARTICLE_ID_HERE/similar?k=5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "articles",
+            "YOUR_ARTICLE_ID_HERE",
+            "similar"
+          ],
+          "query": [
+            {
+              "key": "k",
+              "value": "5"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
