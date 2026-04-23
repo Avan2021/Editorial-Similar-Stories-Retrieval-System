@@ -65,4 +65,6 @@ def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depend
     access_token = create_access_token(
         data={"sub": user.email}, expires_delta=access_token_expires
     )
+    if isinstance(access_token, bytes):
+        access_token = access_token.decode('utf-8')
     return {"access_token": access_token, "token_type": "bearer"}
