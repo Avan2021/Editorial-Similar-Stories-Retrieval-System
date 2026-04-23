@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 import { KeyRound, Mail, UserPlus } from 'lucide-react';
 
-const API_URL = 'http://localhost:8000/auth';
+const API_URL = `${import.meta.env.VITE_API_URL || 'http://localhost:8000'}/auth`;
 
 export default function Signup() {
   const [email, setEmail] = useState('');
